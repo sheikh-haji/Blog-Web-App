@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") -%>
+<h1>home</h1>
+<p><%=content%></p>
+<% array1.forEach(function(item){%>
+
+      <h1><%=item.title%></h1>
+
+      <%for(var i=0;i<item.content.length;i++){%>
+        <% if(i<100){%>
+          <% var2+=item.content[i];%>
+         <%}else{%>
+         <%break;}%>
+         <%}%>
+         <p>
+           <%var2+="....";%>
+           <%=var2%>
+           <% console.log(var2);%>
+            <a href="/post/<%=item.title%>">Read More</a>
+         </p>
+
+<%})%>
+<%- include("partials/footer.ejs") -%>
